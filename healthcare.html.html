@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #fff;
+            color: #222;
+        }
+
+        h3 {
+            text-align: center;
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #202f72;
+            margin-bottom: 15px;
+        }
+
+        p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .service {
+            background: #35a9e0;
+            color: white;
+            margin: 15px 0;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+            .service:hover {
+                background: #1e8ec6;
+            }
+
+            .service i {
+                font-size: 22px;
+                margin-right: 12px;
+            }
+
+            .service span {
+                font-size: 18px;
+                flex: 1;
+            }
+
+            .service .arrow {
+                transition: transform 0.3s;
+            }
+
+            .service.active .arrow {
+                transform: rotate(180deg);
+            }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            background: #f4faff;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            padding: 0 15px;
+            border-radius: 0 0 12px 12px;
+            transition: max-height 0.4s ease;
+        }
+
+            .content p {
+                text-align: left;
+                padding: 15px 0;
+                margin: 0;
+                color: #333;
+            }
+    </style>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <h3>Healthcare Services</h3>
+    <h2>Healthcare Services Provided in the Clusters</h2>
+    <p>
+        The health clusters offer a comprehensive range of healthcare services through an integrated network of central and general hospitals, as well as specialized centers. These services are provided within a comprehensive healthcare system, ensuring high-quality and effective healthcare for the community.
+    </p>
+
+    <!-- Service Items -->
+    <div class="service">
+        <i class="fa-solid fa-house-medical"></i>
+        <span>Home Care</span>
+        <i class="fa-solid fa-chevron-down arrow"></i>
+    </div>
+    <div class="content">
+        <p>Details about home care services...</p>
+    </div>
+
+    <div class="service">
+        <i class="fa-solid fa-user-md"></i>
+        <span>Primary Health Care</span>
+        <i class="fa-solid fa-chevron-down arrow"></i>
+    </div>
+    <div class="content">
+        <p>Details about primary health care services...</p>
+    </div>
+
+    <div class="service">
+        <i class="fa-solid fa-hospital"></i>
+        <span>Specialty Care</span>
+        <i class="fa-solid fa-chevron-down arrow"></i>
+    </div>
+    <div class="content">
+        <p>Details about specialty care services...</p>
+    </div>
+
+    <div class="service">
+        <i class="fa-solid fa-headset"></i>
+        <span>Virtual Care</span>
+        <i class="fa-solid fa-chevron-down arrow"></i>
+    </div>
+    <div class="content">
+        <p>Details about virtual care services...</p>
+    </div>
+
+    <script>
+    // Toggle expand/collapse
+    const services = document.querySelectorAll(".service");
+
+    services.forEach((service, index) => {
+      service.addEventListener("click", () => {
+        service.classList.toggle("active");
+
+        const content = service.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+    </script>
+</body>
+</html>
